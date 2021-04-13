@@ -1,10 +1,10 @@
-import { connect } from "mongoose";
+const mongoose = require('mongoose'); 
 
-connect("mongodb://localhost:27017/TheMeanBlog", {
+mongoose.connect('mongodb://localhost:27017/TheMeanBlog', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
-console.log("Connected to DB");
+    console.log('Connected to DB');
 }).catch(error => {
-    console.log("Unable to connect to DB", error)
+    console.log('Unable to connect to DB ', error);
 });
