@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E2E2E2;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #897792;
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+    color:#F9F9F9;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+
+    a {
+        color:#F9F9F9;
+        text-decoration: none; 
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    li {
+        list-style: none;
+    }
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+
+    div {
+        width: 25px;
+        height: 2px;
+        background-color:#F9F9F9;
+        margin: 5px;
+        transition: all 0.3s ease-in;
+    }
+}
+
+@media screen and (max-width:768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-links {
+       position: absolute;
+       right:0px;
+       height:92vh;
+       top: 8vh;
+       background-color: #897792;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       transform: translateX(100%);
+       transition: transform 0.5s ease-in;
+
+       li {
+           opacity: 0;
+       }
+    }
+
+    .burger-menu {
+        display: block;
+        cursor: pointer;
+    }
+    
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.burger-toggle {
+    .burger-line1 {
+        transform: rotate(-45deg) translate(-5px, 5px);
+    }
+
+    .burger-line2 {
+        opacity: 0;
+    }
+
+    .burger-line3 {
+        transform: rotate(45deg) translate(-5px, -5px);
+    }
+}
